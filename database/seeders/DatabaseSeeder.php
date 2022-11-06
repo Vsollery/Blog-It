@@ -17,19 +17,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        
 
-        User::create([
-            'name' => 'Venia Sollery',
-            'email' => 'vsollery@gmail.com',
-            'password' => bcrypt('12345')
-        ]);
+        // User::create([
+        //     'name' => 'Venia Sollery',
+        //     'email' => 'vsollery@gmail.com',
+        //     'password' => bcrypt('12345')
+        // ]);
 
-        User::create([
-            'name' => 'Satriya',
-            'email' => 'Satriya@gmail.com',
-            'password' => bcrypt('54321')
-        ]);
+        // User::create([
+        //     'name' => 'Satriya',
+        //     'email' => 'Satriya@gmail.com',
+        //     'password' => bcrypt('54321')
+        // ]);
+
+        User::factory(3)->create();
 
         Category::create([
             'name' => 'Programming',
@@ -41,55 +43,51 @@ class DatabaseSeeder extends Seeder
             'slug' => 'design'
         ]);
 
-        Post::create([
-            'title' => 'Judul Pertama',
-            'slug' => 'judul-pertama',
-            'excerpt' => 'Labore duis deserunt velit quis tempor occaecat nostrud velit sint non incididunt.',
-            'body' => 'Labore duis deserunt velit quis tempor occaecat nostrud velit sint non incididunt.
-            Dolor deserunt eu irure cupidatat amet eu. Dolor officia cupidatat nisi 
-            reprehenderit dolor qui. Officia ipsum nostrud irure aute velit nulla aute esse.',
-            'category_id' => 1,
-            'user_id' => 1
-        ]);
+        Post::factory(20)->create();
 
-        Post::create([
-            'title' => 'Judul Kedua',
-            'slug' => 'judul-kedua',
-            'excerpt' => 'Labore duis deserunt velit quis tempor occaecat nostrud velit sint non incididunt.',
-            'body' => 'Labore duis deserunt velit quis tempor occaecat nostrud velit sint non incididunt.
-            Dolor deserunt eu irure cupidatat amet eu. Dolor officia cupidatat nisi 
-            reprehenderit dolor qui. Officia ipsum nostrud irure aute velit nulla aute esse.',
-            'category_id' => 1,
-            'user_id' => 1
-        ]);
-
-        Post::create([
-            'title' => 'Judul Ketiga',
-            'slug' => 'judul-ke-tiga',
-            'excerpt' => 'Labore duis deserunt velit quis tempor occaecat nostrud velit sint non incididunt.',
-            'body' => 'Labore duis deserunt velit quis tempor occaecat nostrud velit sint non incididunt.
-            Dolor deserunt eu irure cupidatat amet eu. Dolor officia cupidatat nisi 
-            reprehenderit dolor qui. Officia ipsum nostrud irure aute velit nulla aute esse.',
-            'category_id' => 2,
-            'user_id' => 2
-        ]);
-
-        Post::create([
-            'title' => 'Judul Ke-empat',
-            'slug' => 'judul-ke-empat',
-            'excerpt' => 'Labore duis deserunt velit quis tempor occaecat nostrud velit sint non incididunt.',
-            'body' => 'Labore duis deserunt velit quis tempor occaecat nostrud velit sint non incididunt.
-            Dolor deserunt eu irure cupidatat amet eu. Dolor officia cupidatat nisi 
-            reprehenderit dolor qui. Officia ipsum nostrud irure aute velit nulla aute esse.',
-            'category_id' => 2,
-            'user_id' => 2
-        ]);
-
-
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
+        // Post::create([
+        //     'title' => 'Judul Pertama',
+        //     'slug' => 'judul-pertama',
+        //     'excerpt' => 'Labore duis deserunt velit quis tempor occaecat nostrud velit sint non incididunt.',
+        //     'body' => 'Labore duis deserunt velit quis tempor occaecat nostrud velit sint non incididunt.
+        //     Dolor deserunt eu irure cupidatat amet eu. Dolor officia cupidatat nisi 
+        //     reprehenderit dolor qui. Officia ipsum nostrud irure aute velit nulla aute esse.',
+        //     'category_id' => 1,
+        //     'user_id' => 1
         // ]);
+
+        // Post::create([
+        //     'title' => 'Judul Kedua',
+        //     'slug' => 'judul-kedua',
+        //     'excerpt' => 'Labore duis deserunt velit quis tempor occaecat nostrud velit sint non incididunt.',
+        //     'body' => 'Labore duis deserunt velit quis tempor occaecat nostrud velit sint non incididunt.
+        //     Dolor deserunt eu irure cupidatat amet eu. Dolor officia cupidatat nisi 
+        //     reprehenderit dolor qui. Officia ipsum nostrud irure aute velit nulla aute esse.',
+        //     'category_id' => 1,
+        //     'user_id' => 1
+        // ]);
+
+        // Post::create([
+        //     'title' => 'Judul Ketiga',
+        //     'slug' => 'judul-ke-tiga',
+        //     'excerpt' => 'Labore duis deserunt velit quis tempor occaecat nostrud velit sint non incididunt.',
+        //     'body' => 'Labore duis deserunt velit quis tempor occaecat nostrud velit sint non incididunt.
+        //     Dolor deserunt eu irure cupidatat amet eu. Dolor officia cupidatat nisi 
+        //     reprehenderit dolor qui. Officia ipsum nostrud irure aute velit nulla aute esse.',
+        //     'category_id' => 2,
+        //     'user_id' => 2
+        // ]);
+
+        // Post::create([
+        //     'title' => 'Judul Ke-empat',
+        //     'slug' => 'judul-ke-empat',
+        //     'excerpt' => 'Labore duis deserunt velit quis tempor occaecat nostrud velit sint non incididunt.',
+        //     'body' => 'Labore duis deserunt velit quis tempor occaecat nostrud velit sint non incididunt.
+        //     Dolor deserunt eu irure cupidatat amet eu. Dolor officia cupidatat nisi 
+        //     reprehenderit dolor qui. Officia ipsum nostrud irure aute velit nulla aute esse.',
+        //     'category_id' => 2,
+        //     'user_id' => 2
+        // ]);
+
     }
 }
