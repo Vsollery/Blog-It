@@ -1,0 +1,6 @@
+Post::create([
+    'title' => 'Judul Ketiga',
+    'excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu bibendum at varius vel pharetra vel turpis nunc.',
+    'slug' => 'judul-ketiga',
+    'body' => '<p>Hdfasfasfjidsalfasdkljfasdjfioasifdaslkd</p><p>jdklfjaskdfklasdklfhasdfdasfjsadfhiaofkldncashfdud fadshfdahsfd dfaksdhhfdashfid.</p>'
+])

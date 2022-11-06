@@ -2,7 +2,7 @@
 
 @section('container')
 
-    <h1 class='mb-5 ml-5'>Posts</h1>
+    <h1 class='mb-5 ml-5'>Categories : {{ $category }}</h1>
 
     @foreach($posts as $post)
         <article class="mb-5 ml-5">
