@@ -16,7 +16,7 @@
 
     @include('partials.navbar')
 
-    <div class=" container ml-0 mt-4">
+    <div class="container mt-4">
         @yield('container')
     </div>
 
