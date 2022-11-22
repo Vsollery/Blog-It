@@ -22,4 +22,11 @@ class Post extends Model
 
         return $this->belongsTo(User::class, 'user_id'); //This post belongs to 1 user
     }
+
+    public function scopeFilter($query, array $filters){
+        if(isset($filters['search'])? $filters['search'] : false){
+            return $query->where('title','like','%'. $filters['search'] . '%')
+                ->orWhere('body','like','%'. $filters['search'] . '%');
+        };
+    }
 }
