@@ -2,7 +2,18 @@
 
 @section('container')
 
-    <h1 class='mb-5 ml-5'>{{ $title }}</h1>
+    <h1 class='mb-3 text-center'>{{ $title }}</h1>
+
+    <div class="row justify-content-center mb-3">
+        <div class="col-md-6">
+            <form action="/posts" method="/get">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Search Post..." name="search" value= "{{ request('search') }}">
+                    <button class="btn btn-dark" type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     @if($posts->count())
         <div class="card mb-5 ">
@@ -24,10 +35,7 @@
                 <a href="/posts/{{ $posts[0]->slug }}" class="text-decoration-none btn btn-primary">Read More</a>
             </div>
         </div>
-    @else
-        <p class="text-center fs-4">No post found.</p>
 
-    @endif
         <div class="container">
             <div class="row">
                 @foreach($posts->skip(1) as $post)
@@ -54,6 +62,11 @@
             </div>
             
         </div>
+
+    @else
+        <p class="text-center fs-4">No post found.</p>
+
+    @endif
 
     <!-- @foreach($posts->skip(1) as $post)
         <article class="mb-5 border-bottom pb-3">
