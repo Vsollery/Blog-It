@@ -1,6 +1,14 @@
 Post::create([
-    'title' => 'Judul Ketiga',
+    'title' => 'Judul Keempat',
+    'category_id' => 2,
     'excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu bibendum at varius vel pharetra vel turpis nunc.',
-    'slug' => 'judul-ketiga',
+    'slug' => 'judul-kempat',
     'body' => '<p>Hdfasfasfjidsalfasdkljfasdjfioasifdaslkd</p><p>jdklfjaskdfklasdklfhasdfdasfjsadfhiaofkldncashfdud fadshfdahsfd dfaksdhhfdashfid.</p>'
 ])
+
+Category::create([
+    'name' => 'Personal',
+    'slug' => 'personal'
+])
+
+Labore duis deserunt velit quis tempor occaecat nostrud velit sint non incididunt. Dolor deserunt eu irure cupidatat amet eu. Dolor officia cupidatat nisi reprehenderit dolor qui. Officia ipsum nostrud irure aute velit nulla aute esse.
