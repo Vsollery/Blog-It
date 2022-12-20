@@ -11,7 +11,6 @@ use App\Models\User;
 class PostController extends Controller
 {
     public function index(){
-
         $title = '';
         if(request('category')){
             $category = Category::firstWhere('slug', request('category'));

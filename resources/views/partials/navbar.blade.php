@@ -29,7 +29,7 @@
                         Welcome back, {{ auth()->user()->name }}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#"><i class="bi bi-clipboard-fill"></i> Dashboard</a>
+                        <a class="dropdown-item" href="/dashboard"><i class="bi bi-clipboard-fill"></i> Dashboard</a>
                         <form action="/logout" method="post">
                             @csrf
                             <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-in-right"></i> Logout</button>
