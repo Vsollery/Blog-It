@@ -9,16 +9,17 @@
 <div class="col-lg-8">
   <form method="post" action="/dashboard/posts">
     @csrf
+    
     <div class="mb-3">
       <label for="title" class="form-label">Title</label>
-      <input name="title" type="text" class="form-control @error('title') is-invalid @enderror" id="title">
+      <input name="title" type="text" class="form-control @error('title') is-invalid @enderror" id="title" value="{{ old('title') }}">
       @error('title')
       <div class="invalid-feedback">{{ $message }}</div>
       @enderror
     </div>
     <div class="mb-3">
       <label for="slug" class="form-label ">Slug</label>
-      <input name="slug" type="text" class="form-control @error('slug') is-invalid @enderror" id="slug">
+      <input name="slug" type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" value="{{ old('slug') }}">
       @error('slug')
       <div class="invalid-feedback">{{ $message }}</div>
       @enderror
@@ -27,20 +28,24 @@
       <label for="category" class="form-label">Category</label>
       <select class="form-select" name="category_id">
         @foreach($categories as $category)
-        <option value="{{ $category->id }}">{{ $category->name }}</option>
+          @if(old('category_id') == $category->id)
+          <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+          @else
+          <option value="{{ $category->id }}">{{ $category->name }}</option>
+          @endif
         @endforeach
       </select>
     </div>
     <div class="mb-3">
       <label for="body" class="form-label">Body</label>
+      <input id="body" type="hidden" name="body" value="{{ old('body') }}">
       @error('body')
-      <p>{{ $message}}</p>
+        <p class="text-danger"> {{ $message }} </p>
       @enderror
-      <input id="body" type="hidden" name="body">
       <trix-editor input="body"></trix-editor>
     </div>
 
-    <button type="submit" class="btn btn-primary">Add Post</button>
+    <button type="submit" class="btn btn-primary mb-3">Add Post</button>
   </form>
 </div>
 
