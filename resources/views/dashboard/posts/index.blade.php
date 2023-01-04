@@ -24,7 +24,7 @@
                 <td>{{ $post->category->name }}</td>
                 <td>
                     <a href="/dashboard/posts/{{ $post->slug }}" class="badge bg-primary"> <span data-feather="eye" class="align-text-bottom"></span></a>
-                    <a href="" class="badge bg-warning"> <span data-feather="edit" class="align-text-bottom"></span></a>
+                    <a href="/dashboard/posts/{{ $post->slug }}/edit" class="badge bg-warning"> <span data-feather="edit" class="align-text-bottom"></span></a>
                     <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
                         @method('delete')
                         @csrf
