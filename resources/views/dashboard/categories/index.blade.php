@@ -21,15 +21,8 @@
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $category->name }}</td>
                 <td>
-                    <a href="/dashboard/categories/{{ $category->slug }}" class="badge bg-primary"> <span data-feather="eye" class="align-text-bottom"></span></a>
-                    <a href="/dashboard/categories/{{ $category->slug }}/edit" class="badge bg-warning"> <span data-feather="edit" class="align-text-bottom"></span></a>
-                    <form action="/dashboard/categories/{{ $category->slug }}" method="post" class="d-inline">
-                        @method('delete')
-                        @csrf
-                        <button class="badge bg-danger border-0" onclick="return confirm('Are you sure you want to delete this post?')"><span data-feather="trash" class="align-text-bottom"></span></button>
-                    </form>
-                    
-                </td>
+                    <a href="/dashboard/categories/{{ $category->slug }}" class="badge bg-primary"> <span data-feather="eye" class="align-text-bottom"></span></a>                    
+               </td>
             </tr>
             @endforeach
         </tbody>
