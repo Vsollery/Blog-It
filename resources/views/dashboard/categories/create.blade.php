@@ -16,7 +16,7 @@
     <div class="mb-3">
       <label for="name" class="form-label">Category</label>
       <input name="name" type="text" class="form-control @error('name') is-invalid @enderror" id="name" value="{{ old('name') }}">
-      @error('category')
+      @error('name')
       <div class="invalid-feedback">{{ $message }}</div>
       @enderror
     </div>
@@ -36,6 +36,18 @@
   </form>
 </div>
 
+{{-- <script>
+  const title = document.querySelector("#title");
+  const slug = document.querySelector("#slug");
+
+  title.addEventListener('change', function(){
+    fetch('/dashboard/posts/checkSlug?title=' + title.value)//if there is a request to /dashboard/posts/createSlug
+      .then(response => response.json)
+      .then(data => slug.value = data.slug)    
+  });
+
+</script>  --}}
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 <script>
@@ -48,6 +60,8 @@
       }
     );
   });
+
+
 </script>
 
 @endsection

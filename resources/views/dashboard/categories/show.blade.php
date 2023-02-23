@@ -7,30 +7,35 @@
 </div>
 
 <div class="mb-5">
-  <h3>Number of post in {{ $category->name }}: {{ $posts->count() }}</h3>
+  <h3>Number of posts in {{ $category->name }}: {{ $posts->count() }}</h3>
 </div>
 
-<div class="table-responsive">
-  <table class="table table-striped table-sm">
-          <thead>
-              <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Author</th>
-                  <th scope="col">Title</th>
-              </tr>
-          </thead>
-          <tbody>
-              @foreach($posts as $post)
-              <tr>
-                  <td>{{ $loop->iteration }}</td>
-                  <td>{{ $post->author->name }}</td>
-                  <td>{{ $post->title }}</td>
-              </tr>
-              @endforeach
-          </tbody>
-      </table>
-
+@if($posts->count())
+  <div class="table-responsive">
+    <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Title</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($posts as $post)
+                <tr>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $post->author->name }}</td>
+                    <td>{{ $post->title }}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+  </div>
+@else
+<div class="alert alert-danger" role="alert">
+  There are currently no posts in {{ $category->name }}
 </div>
+@endif
 
 
 @endsection
