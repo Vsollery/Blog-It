@@ -47,6 +47,8 @@ class Post extends Model
         //         ->orWhere('body','like','%'. $filters['search'] . '%');
         // };
 
+        //when method execute when the first argument is true
+
         $query->when($filters['search'] ?? false, function($query, $search){
             return $query->where('title','like','%'. $search . '%')
             ->orWhere('body','like','%'. $search . '%');            

@@ -19,7 +19,8 @@ class AdminCategoryController extends Controller
     {
         $this->authorize('admin');
         return view('dashboard.categories.index', [
-            'categories' => Category::all()
+            'categories' => Category::all(),
+            
         ]);
     }
 
@@ -110,7 +111,8 @@ class AdminCategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        Category::destroy($category->id);
+        return redirect('/dashboard/categories')->with('success', 'Category has been deleted');
     }
 
     public function checkSlug(Request $request){
