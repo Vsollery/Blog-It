@@ -56,7 +56,7 @@ Route::get('posts/{post:slug}', [PostController::class, 'show']);
 
 Route::get('/categories', function(){
     return view('categories',[
-        'title' => 'Post Catogories',
+        'title' => 'Post Categories',
         'active' => "categories",
         'categories' => Category::all()
 
@@ -71,7 +71,10 @@ Route::get('/register', [RegisterController::class, 'index'])->middleware('guest
 Route::post('/register', [RegisterController::class, 'store']);
  
 Route::get('/dashboard',function(){
-    return view('dashboard.index');
+    return view('dashboard.index',[
+        // 'posts' => Post::where('user_id', auth()->user()->id)->get()->paginate(6)->withQueryString()
+        'posts' => Post::latest()->where('user_id', auth()->user()->id)->paginate(6)->withQueryString()
+    ]);
 })->middleware('auth');
 
 Route::get('/dashboard/posts/checkSlug',[DashboardPostController::class, 'checkSlug'])->middleware(('auth'));
