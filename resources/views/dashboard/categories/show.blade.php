@@ -37,5 +37,7 @@
 </div>
 @endif
 
+<a href="/dashboard/categories" class="btn btn-primary"> <span data-feather="arrow-left"></span> Back </a>
+
 
 @endsection
