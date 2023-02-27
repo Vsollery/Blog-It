@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use Illuminate\Support\Facades\Auth;
 use Whoops\Run;
 
 /*
@@ -33,8 +34,8 @@ Route::get('/about', function() {
     return view('about', [
         "title" => "About",
         "active" => "about",
-        "name" => "Venia Sollery",
-        "email" => "vsollery@gmail.com"
+        "user" => Auth::user()
+        
     ]);
 });
 

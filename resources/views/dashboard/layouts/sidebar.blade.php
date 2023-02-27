@@ -13,6 +13,18 @@
                     My Posts
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('/posts*')? 'active' : '' }}" href="/posts">
+                    <span data-feather="compass" class="align-text-bottom"></span>
+                    Explore
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('/about*')? 'active' : '' }}" href="/about">
+                    <span data-feather="user" class="align-text-bottom"></span>
+                    About
+                </a>
+            </li>
         </ul>
         @can('admin')
         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
