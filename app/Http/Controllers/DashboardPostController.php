@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Facades\Response;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class DashboardPostController extends Controller
@@ -63,7 +64,7 @@ class DashboardPostController extends Controller
         $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
 
         Post::create($validatedData);
-        
+
         return redirect('/dashboard/posts')->with('success', 'New Post Added!');
     }
 
@@ -71,7 +72,7 @@ class DashboardPostController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function show(Post $post)
     {
@@ -110,11 +111,11 @@ class DashboardPostController extends Controller
             'body' => 'required'
         ];
 
-        
+
         if($request->slug != $post->slug){
             $rules['slug'] = 'required|unique:posts';
         }
-        
+
         $validatedData = $request->validate($rules);
 
         if($request->file('image')){
@@ -128,7 +129,7 @@ class DashboardPostController extends Controller
         $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
 
         Post::where('id', $post->id)->update($validatedData);
-        
+
         return redirect('/dashboard/posts')->with('success', 'Post has been edited!');
 
 
